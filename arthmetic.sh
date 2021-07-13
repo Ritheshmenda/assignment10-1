@@ -12,5 +12,8 @@ arthmatic[counter++]="$compute1"
 arthmatic[counter++]="$compute2"
 arthmatic[counter++]="$compute3"
 arthmatic[counter++]="$compute4"
-echo "allkeys" ${!arthmatic[@]}
-echo "display results" ${arthmatic[@]}
+for DATA in "${arthmatic[@]}"
+do
+arr+=("${DATA##*:}")
+done
+echo "$arr[@]}"
