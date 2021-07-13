@@ -1,16 +1,16 @@
-
 #!/bin/bash -x
-declare -A arthmatic
+declare -a arthmatic
 read -p "a:" a
 read -p "b:" b
 read -p "c:" c
-compute4=$(($a%$b+$c))
-arthmatic[a]="$a"
-arthmatic[b]="$b"
-arthmatic[c]="$c"
-arthmatic[compute4]="$compute4"
-echo "display a" ${arthmatic[a]}
-echo "display b" ${arthmatic[b]}
-echo "display c" ${arthmatic[c]}
-echo "display compute4" ${arthmatic[compute4]}
-echo "display all" ${!arthmatic[@]}
+echo $a , $b , $c
+compute1=$((a*b+c))
+compute2=$((c+a/b))
+compute3=$((a%b+c))
+compute4=$((a%b+c))
+arthmatic[counter++]="$compute1"
+arthmatic[counter++]="$compute2"
+arthmatic[counter++]="$compute3"
+arthmatic[counter++]="$compute4"
+echo "allkeys" ${!arthmatic[@]}
+echo "display results" ${arthmatic[@]}
